@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHADU MARKET - Mini App</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- App Wrapper -->
+    <div id="app">
+        <!-- Header with Navigation Icons -->
+        <header>
+            <h1>AHADU MARKET</h1>
+            <div class="icons">
+                <img src="assets/account-icon.png" alt="Account" class="icon" onclick="showSection('account')">
+                <img src="assets/cart-icon.png" alt="Cart" class="icon" onclick="showSection('cart')">
+            </div>
+        </header>
+
+        <!-- Main Content Sections -->
+        <section id="home" class="content-section active">
+            <h2>Product List</h2>
+            <div id="product-list" class="product-list"></div>
+        </section>
+
+        <section id="cart" class="content-section hidden">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <button id="checkout-button" class="btn">Proceed to Checkout</button>
+            <button class="btn" onclick="showSection('home')">Back to Home</button>
+        </section>
+
+        <section id="account" class="content-section hidden">
+            <h2>Your Account</h2>
+            <form id="user-form">
+                <label for="user-name-input">Name:</label>
+                <input type="text" id="user-name-input" required>
+                <label for="user-phone-input">Phone:</label>
+                <input type="text" id="user-phone-input" required>
+                <label for="user-address-input">Address:</label>
+                <input type="text" id="user-address-input" required>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <div id="user-info" class="hidden">
+                <p>Name: <span id="display-name"></span></p>
+                <p>Phone: <span id="display-phone"></span></p>
+                <p>Address: <span id="display-address"></span></p>
+            </div>
+            <button class="btn" onclick="showSection('home')">Back to Home</button>
+        </section>
+
+        <!-- Footer Navigation -->
+        <footer>
+            <button class="nav-btn" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('cart')">Cart</button>
+            <button class="nav-btn" onclick="showSection('account')">Account</button>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
